@@ -302,7 +302,7 @@ static bool AllocateEnv()
         return false;
     }
 
-    SQLPOINTER defaultVersion = (SQLPOINTER)SQL_OV_ODBC3;
+    SQLPOINTER defaultVersion = (SQLPOINTER)SQL_OV_ODBC2;
     PyObject* odbcversion = PyObject_GetAttrString(pModule, "odbcversion");
     if (PyObject_TypeCheck(odbcversion, &PyUnicode_Type)) {
         if (PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0)
